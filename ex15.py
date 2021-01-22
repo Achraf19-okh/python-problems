@@ -1,0 +1,23 @@
+print("Welcome to the average Valculator App")
+name = input("What is you name : ").strip().title()
+grades = int(input("hello"+  name  +"how many grades would you like to enter : "))
+print("---------Grades must be between (0-20)----------")
+L = []
+for i in range(0,grades):
+    L.append(float(input("Enter grade:")))
+L.sort(reverse=True)
+print("Grades Highest to lowest :")
+for i in L:
+    print("\t" + str(i))
+average = sum(L)/len(L)
+average = round(average,2)
+print(name , "'s Grade summary")
+print("\tTotal Number of grades :" , str(len(L)))
+print("\tHighest Grade :" , str(max(L)))
+print("\tLowest Grade:" , str(min(L)))
+print("\tAverage :" , average)
+desired_avg = float(input("\n what is you desired average: "))
+grade_req = desired_avg*(len(L)+1) -sum(L)
+grade_req = round(grade_req,2)
+print("\t Good Luck" + name + "!")
+print("You have to get a " + str(grade_req) + " on your assignment to earn a " + str(desired_avg))
